@@ -1,0 +1,254 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> statement
+Rule 1     statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON
+Rule 2     statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON error SEMICOLON
+Rule 3     datatype -> INT
+Rule 4     datatype -> FLOAT
+Rule 5     datatype -> CHAR
+Rule 6     datatype -> DOUBLE
+Rule 7     datatype -> LONG
+Rule 8     datatype -> SHORT
+Rule 9     datatype -> VOID
+Rule 10    datatype -> UNSIGNED
+Rule 11    datatype -> SIGNED
+
+Terminals, with rules where they appear
+
+ASSIGN               : 1 2
+CHAR                 : 5
+DOUBLE               : 6
+FLOAT                : 4
+INT                  : 3
+LBRACKET             : 1 2
+LONG                 : 7
+NEW                  : 1 2
+NUMBER               : 1 2
+POINTERNAME          : 1 2
+RBRACKET             : 1 2
+SEMICOLON            : 1 2 2
+SHORT                : 8
+SIGNED               : 11
+UNSIGNED             : 10
+VOID                 : 9
+error                : 2
+
+Nonterminals, with rules where they appear
+
+datatype             : 1 1 2 2
+statement            : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . statement
+    (1) statement -> . datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON
+    (2) statement -> . datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON error SEMICOLON
+    (3) datatype -> . INT
+    (4) datatype -> . FLOAT
+    (5) datatype -> . CHAR
+    (6) datatype -> . DOUBLE
+    (7) datatype -> . LONG
+    (8) datatype -> . SHORT
+    (9) datatype -> . VOID
+    (10) datatype -> . UNSIGNED
+    (11) datatype -> . SIGNED
+
+    INT             shift and go to state 3
+    FLOAT           shift and go to state 4
+    CHAR            shift and go to state 5
+    DOUBLE          shift and go to state 6
+    LONG            shift and go to state 7
+    SHORT           shift and go to state 8
+    VOID            shift and go to state 9
+    UNSIGNED        shift and go to state 10
+    SIGNED          shift and go to state 11
+
+    statement                      shift and go to state 1
+    datatype                       shift and go to state 2
+
+state 1
+
+    (0) S' -> statement .
+
+
+
+state 2
+
+    (1) statement -> datatype . POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON
+    (2) statement -> datatype . POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON error SEMICOLON
+
+    POINTERNAME     shift and go to state 12
+
+
+state 3
+
+    (3) datatype -> INT .
+
+    POINTERNAME     reduce using rule 3 (datatype -> INT .)
+    LBRACKET        reduce using rule 3 (datatype -> INT .)
+
+
+state 4
+
+    (4) datatype -> FLOAT .
+
+    POINTERNAME     reduce using rule 4 (datatype -> FLOAT .)
+    LBRACKET        reduce using rule 4 (datatype -> FLOAT .)
+
+
+state 5
+
+    (5) datatype -> CHAR .
+
+    POINTERNAME     reduce using rule 5 (datatype -> CHAR .)
+    LBRACKET        reduce using rule 5 (datatype -> CHAR .)
+
+
+state 6
+
+    (6) datatype -> DOUBLE .
+
+    POINTERNAME     reduce using rule 6 (datatype -> DOUBLE .)
+    LBRACKET        reduce using rule 6 (datatype -> DOUBLE .)
+
+
+state 7
+
+    (7) datatype -> LONG .
+
+    POINTERNAME     reduce using rule 7 (datatype -> LONG .)
+    LBRACKET        reduce using rule 7 (datatype -> LONG .)
+
+
+state 8
+
+    (8) datatype -> SHORT .
+
+    POINTERNAME     reduce using rule 8 (datatype -> SHORT .)
+    LBRACKET        reduce using rule 8 (datatype -> SHORT .)
+
+
+state 9
+
+    (9) datatype -> VOID .
+
+    POINTERNAME     reduce using rule 9 (datatype -> VOID .)
+    LBRACKET        reduce using rule 9 (datatype -> VOID .)
+
+
+state 10
+
+    (10) datatype -> UNSIGNED .
+
+    POINTERNAME     reduce using rule 10 (datatype -> UNSIGNED .)
+    LBRACKET        reduce using rule 10 (datatype -> UNSIGNED .)
+
+
+state 11
+
+    (11) datatype -> SIGNED .
+
+    POINTERNAME     reduce using rule 11 (datatype -> SIGNED .)
+    LBRACKET        reduce using rule 11 (datatype -> SIGNED .)
+
+
+state 12
+
+    (1) statement -> datatype POINTERNAME . ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON
+    (2) statement -> datatype POINTERNAME . ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON error SEMICOLON
+
+    ASSIGN          shift and go to state 13
+
+
+state 13
+
+    (1) statement -> datatype POINTERNAME ASSIGN . NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON
+    (2) statement -> datatype POINTERNAME ASSIGN . NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON error SEMICOLON
+
+    NEW             shift and go to state 14
+
+
+state 14
+
+    (1) statement -> datatype POINTERNAME ASSIGN NEW . datatype LBRACKET NUMBER RBRACKET SEMICOLON
+    (2) statement -> datatype POINTERNAME ASSIGN NEW . datatype LBRACKET NUMBER RBRACKET SEMICOLON error SEMICOLON
+    (3) datatype -> . INT
+    (4) datatype -> . FLOAT
+    (5) datatype -> . CHAR
+    (6) datatype -> . DOUBLE
+    (7) datatype -> . LONG
+    (8) datatype -> . SHORT
+    (9) datatype -> . VOID
+    (10) datatype -> . UNSIGNED
+    (11) datatype -> . SIGNED
+
+    INT             shift and go to state 3
+    FLOAT           shift and go to state 4
+    CHAR            shift and go to state 5
+    DOUBLE          shift and go to state 6
+    LONG            shift and go to state 7
+    SHORT           shift and go to state 8
+    VOID            shift and go to state 9
+    UNSIGNED        shift and go to state 10
+    SIGNED          shift and go to state 11
+
+    datatype                       shift and go to state 15
+
+state 15
+
+    (1) statement -> datatype POINTERNAME ASSIGN NEW datatype . LBRACKET NUMBER RBRACKET SEMICOLON
+    (2) statement -> datatype POINTERNAME ASSIGN NEW datatype . LBRACKET NUMBER RBRACKET SEMICOLON error SEMICOLON
+
+    LBRACKET        shift and go to state 16
+
+
+state 16
+
+    (1) statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET . NUMBER RBRACKET SEMICOLON
+    (2) statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET . NUMBER RBRACKET SEMICOLON error SEMICOLON
+
+    NUMBER          shift and go to state 17
+
+
+state 17
+
+    (1) statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER . RBRACKET SEMICOLON
+    (2) statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER . RBRACKET SEMICOLON error SEMICOLON
+
+    RBRACKET        shift and go to state 18
+
+
+state 18
+
+    (1) statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET . SEMICOLON
+    (2) statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET . SEMICOLON error SEMICOLON
+
+    SEMICOLON       shift and go to state 19
+
+
+state 19
+
+    (1) statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON .
+    (2) statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON . error SEMICOLON
+
+    $end            reduce using rule 1 (statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON .)
+    error           shift and go to state 20
+
+
+state 20
+
+    (2) statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON error . SEMICOLON
+
+    SEMICOLON       shift and go to state 21
+
+
+state 21
+
+    (2) statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON error SEMICOLON .
+
+    $end            reduce using rule 2 (statement -> datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON error SEMICOLON .)
+
