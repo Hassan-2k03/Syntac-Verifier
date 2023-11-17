@@ -1,24 +1,6 @@
 import ply.yacc as yacc
 from lex import tokens
 
-tokens = (
-    'INT',
-    'FLOAT',
-    'CHAR',
-    'DOUBLE',
-    'LONG',
-    'SHORT',
-    'UNSIGNED',
-    'SIGNED',
-    'POINTERNAME',
-    'NEW',
-    'ASSIGN',
-    'LBRACKET',
-    'RBRACKET',
-    'SEMICOLON',
-    'NUMBER',  # Added for array size
-)
-
 # Grammar rules
 def p_statement(p):
     '''
@@ -30,14 +12,14 @@ def p_statement(p):
 def p_datatype(p):
     '''
     datatype : INT
-              | FLOAT
-              | CHAR
-              | DOUBLE
-              | LONG
-              | SHORT
-              | VOID
-              | UNSIGNED
-              | SIGNED
+             | FLOAT
+             | CHAR
+             | DOUBLE
+             | LONG
+             | SHORT
+             | VOID
+             | UNSIGNED
+             | SIGNED
     '''
     pass
 
@@ -54,4 +36,4 @@ parser = yacc.yacc()
 user_input = input("Enter the syntax: ")
 
 # Parse the input and check for valid syntax
-parser.parse(user_input, debug=True)
+parser.parse(user_input)
