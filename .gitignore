@@ -1,3 +1,8 @@
 /.vscode
 *.out
-tempCodeRunnnerFile.py
+/new/__pycache__
+/new/parsetab.py
+/new/tempCodeRunnerFile.py
+/Ternary operator/__pycache__
+/Ternary operator/parsetab.py
+/Ternary operator/tempCodeRunnerFile.py

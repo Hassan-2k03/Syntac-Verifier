@@ -1,32 +1,51 @@
+# lexer.py
 import ply.lex as lex
 
-# condition ? statement 1 : statemet 2;
-
-#list of tokens
-tokens=[
-    'CONDITION',
+tokens = [
+    'NUMBER',
+    'VARIABLE',
+    'PLUS',
+    'MINUS',
+    'TIMES',
+    'DIVIDE',
+    'LPAREN',
+    'RPAREN',
     'QUESTION',
-    'STATEMENT1',
-    'STATEMENT2',
     'COLON',
-    'SEMICOLON',
+    'LT',  # Less Than
+    'GT',  # Greater Than
+    'SEMI'
 ]
 
-#regular expressions for tokens
-t_CONDITION = r'[a-zA-Z0-9]+'
-t_QUESTION = r'\?'
-t_STATEMENT1 = r'(.*)'
-t_STATEMENT2 = r'(.*)'
-t_COLON = r':'
-t_SEMICOLON = r';'
+literals = ['+', '-', '*', '/', '(', ')', '?', ':', ';']
 
-#ignored spaces and tabs
+def t_NUMBER(t):
+    r'[0-9]+'
+    t.value = int(t.value)
+    return t
+
+def t_VARIABLE(t):
+    r'[a-zA-Z][a-zA-Z0-9_]*'
+    t.value = t.value
+    return t
+
+t_PLUS = r'\+'
+t_MINUS = r'-'
+t_TIMES = r'\*'
+t_DIVIDE = r'/'
+t_LPAREN = r'\('
+t_RPAREN = r'\)'
+t_QUESTION = r'\?'
+t_COLON = r':'
+t_LT = r'<'
+t_GT = r'>'
+t_SEMI = r';'
+
+# Ignored spaces and tabs
 t_ignore = ' \t'
 
-#error handling rule
 def t_error(t):
-    print(f"Error: Invalid character '{t.value[0]}'")
+    print("Illegal character '%s'" % t.value[0])
     t.lexer.skip(1)
 
-#build the lexer
 lexer = lex.lex()
