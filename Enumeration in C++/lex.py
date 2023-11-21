@@ -1,4 +1,3 @@
-# lex.py
 import ply.lex as lex
 
 tokens = [
@@ -10,13 +9,31 @@ tokens = [
     'SEMICOLON',
 ]
 
-t_ENUM = r'enum\s*'
+# Define the t_ENUM token
+def t_ENUM(t):
+    r'enum'
+    return t
 
-t_IDENTIFIER = r'[a-zA-Z_][a-zA-Z0-9_]*'
-t_LBRACE = r'{'
-t_RBRACE = r'}'
-t_COMMA = r','
-t_SEMICOLON = r';'
+# Prioritize IDENTIFIER token after ENUM
+def t_IDENTIFIER(t):
+    r'[a-zA-Z_][a-zA-Z0-9_]*'
+    return t
+
+def t_LBRACE(t):
+    r'\{'
+    return t
+
+def t_RBRACE(t):
+    r'\}'
+    return t
+
+def t_COMMA(t):
+    r','
+    return t
+
+def t_SEMICOLON(t):
+    r';'
+    return t
 
 t_ignore = ' \t\n'
 
@@ -25,8 +42,3 @@ def t_error(t):
     t.lexer.skip(1)
 
 lexer = lex.lex()
-data = input("Enter enum declaration: ")
-lexer.input(data)
-for token in lexer:
-    print(token)
-
