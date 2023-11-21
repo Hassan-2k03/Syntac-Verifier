@@ -8,6 +8,7 @@ tokens = [
     'DOUBLE',
     'LONG',
     'SHORT',
+    'VOID',
     'UNSIGNED',
     'SIGNED',
     'POINTERNAME',
@@ -26,6 +27,7 @@ t_CHAR = r'char'
 t_DOUBLE = r'double'
 t_LONG = r'long'
 t_SHORT = r'short'
+t_VOID = r'void'
 t_UNSIGNED = r'unsigned'
 t_SIGNED = r'signed'
 t_POINTERNAME = r'\*[a-zA-Z_][a-zA-Z0-9_]*'

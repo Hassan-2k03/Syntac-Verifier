@@ -5,7 +5,6 @@ from lex import tokens
 def p_statement(p):
     '''
     statement : datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON
-              | datatype POINTERNAME ASSIGN NEW datatype LBRACKET NUMBER RBRACKET SEMICOLON error SEMICOLON
     '''
     print("Valid")
 
@@ -36,4 +35,4 @@ parser = yacc.yacc()
 user_input = input("Enter the syntax: ")
 
 # Parse the input and check for valid syntax
-parser.parse(user_input)
+result = parser.parse(user_input)

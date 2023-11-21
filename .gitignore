@@ -1,1 +1,17 @@
 /.vscode
+*.out
+/new/__pycache__
+/new/parsetab.py
+/new/tempCodeRunnerFile.py
+/Ternary operator/__pycache__
+/Ternary operator/parsetab.py
+/Ternary operator/tempCodeRunnerFile.py
+/Multidimention Array/__pycache__
+/Multidimention Array/parsetab.py
+/Multidimention Array/tempCodeRunnerFile.py
+/Enumeration in C++/__pycache__
+/Enumeration in C++/parsetab.py
+/Enumeration in C++/tempCodeRunnerFile.py
+/isalpha/__pycache__
+/isalpha/parsetab.py
+/isalpha/tempCodeRunnerFile.py
