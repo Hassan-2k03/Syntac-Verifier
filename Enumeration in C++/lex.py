@@ -9,12 +9,11 @@ tokens = [
     'SEMICOLON',
 ]
 
-# Define the t_ENUM token
+
 def t_ENUM(t):
     r'enum'
     return t
 
-# Prioritize IDENTIFIER token after ENUM
 def t_IDENTIFIER(t):
     r'[a-zA-Z_][a-zA-Z0-9_]*'
     return t
