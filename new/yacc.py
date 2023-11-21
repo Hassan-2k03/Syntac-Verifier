@@ -36,4 +36,3 @@ user_input = input("Enter the syntax: ")
 
 # Parse the input and check for valid syntax
 result = parser.parse(user_input)
-print(result)
