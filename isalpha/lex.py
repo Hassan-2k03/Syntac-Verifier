@@ -7,7 +7,6 @@ tokens = (
     'RPAREN',
     'SEMICOLON',
     'ISALPHA',
-    'QUOTE',
 )
 
 t_LPAREN = r'\('

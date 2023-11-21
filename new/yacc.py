@@ -20,7 +20,6 @@ def p_datatype(p):
              | UNSIGNED
              | SIGNED
     '''
-    pass
 
 def p_error(p):
     if p:

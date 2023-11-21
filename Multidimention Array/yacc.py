@@ -20,5 +20,4 @@ def p_error(p):
 parser = yacc.yacc()
 
 data = input("Enter array declaration: ")
-result = parser.parse(data)
-print(result)
+parser.parse(data)

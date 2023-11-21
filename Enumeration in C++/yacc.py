@@ -20,5 +20,4 @@ def p_error(p):
 parser = yacc.yacc()
 
 data = input("Enter a enum declaration: ")
-result = parser.parse(data)
-print(result)
+parser.parse(data)

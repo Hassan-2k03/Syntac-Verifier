@@ -38,5 +38,4 @@ parser = yacc.yacc()
 
 # Get input from the user
 data = input("Enter an expression: ")
-result = parser.parse(data)
-print(result)
+parser.parse(data)
